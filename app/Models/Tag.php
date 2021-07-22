@@ -10,7 +10,7 @@ class Tag extends Model
     use HasFactory;
 
         //relación muchos a muchos
-        public function tags()
+        public function posts()
         {
             return $this->belongsToMany(Post::class);
         }
