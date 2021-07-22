@@ -13,7 +13,7 @@
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                             {{-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a> --}}
                             @foreach ($categories as $category)
-                                <a href="{{route('posts.category',$category)}}"
+                                <a href="{{ route('posts.category', $category) }}"
                                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ $category->name }}</a>
                             @endforeach
                         </div>
@@ -47,15 +47,15 @@
                                     </button>
                                 </div>
                                 <!--
-                          Dropdown menu, show/hide based on menu state.
-          
-                          Entering: "transition ease-out duration-100"
-                            From: "transform opacity-0 scale-95"
-                            To: "transform opacity-100 scale-100"
-                          Leaving: "transition ease-in duration-75"
-                            From: "transform opacity-100 scale-100"
-                            To: "transform opacity-0 scale-95"
-                        -->
+                              Dropdown menu, show/hide based on menu state.
+              
+                              Entering: "transition ease-out duration-100"
+                                From: "transform opacity-0 scale-95"
+                                To: "transform opacity-100 scale-100"
+                              Leaving: "transition ease-in duration-75"
+                                From: "transform opacity-100 scale-100"
+                                To: "transform opacity-0 scale-95"
+                            -->
                                 <div x-show="open" x-on:click.away="open = false"
                                     class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                                     role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
@@ -63,6 +63,8 @@
                                     <!-- Active: "bg-gray-100", Not Active: "" -->
                                     <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm text-gray-700"
                                         role="menuitem" tabindex="-1" id="user-menu-item-0">Tu perfil</a>
+                                    <a href="{{ route('admin.home') }}" class="block px-4 py-2 text-sm text-gray-700"
+                                        role="menuitem" tabindex="-1" id="user-menu-item-0">Dashboard</a>
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
                                         <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700"
@@ -119,7 +121,7 @@
                 {{-- <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a> --}}
 
                 @foreach ($categories as $category)
-                    <a href="{{route('posts.category',$category)}}"
+                    <a href="{{ route('posts.category', $category) }}"
                         class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{ $category->name }}</a>
                 @endforeach
 

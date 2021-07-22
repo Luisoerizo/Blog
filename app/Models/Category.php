@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-
+        protected $fillable = ['name','slug'];
 
         //Relacion uno a muchos
         public function posts()
@@ -16,4 +16,8 @@ class Category extends Model
             return $this->hasMany(Post::class);
         }
 
+        public function getRouteKeyName()
+        {
+            return "slug";
+        }
 }
