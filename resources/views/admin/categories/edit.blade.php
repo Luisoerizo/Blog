@@ -7,33 +7,34 @@
 
 @section('content')
 
-@if (session('info'))
-    <div class="alert alert-success" role="alert">
-        <span>{{session('info')}}</span>
-    </div>
-@endif
-<div class="card">
-    <div class="card-body">
-        {!! Form::model($category,['route' => ['admin.categories.update',$category],'method' => 'put']) !!}
-        <div class="form-group">
-            {!! Form::label('name', 'Nombre') !!}
-            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre de la categoría']) !!}
-            @error('name')
-                <span class="text-danger ">{{ $message }}</span>
-            @enderror
-        </div>
 
-        <div class="form-group">
-            {!! Form::label('slug', 'Slug') !!}
-            {!! Form::text('slug', null, ['class' => 'form-control disabled', 'placeholder' => 'Ingrese el slug de la categoría', 'readonly']) !!}
-            @error('slug')
-                <span class="text-danger ">{{ $message }}</span>
-            @enderror
+    <div class="card">
+        <div class="card-body">
+            @if (session('info'))
+                <div class="alert alert-success" role="alert">
+                    <span>{{ session('info') }}</span>
+                </div>
+            @endif
+            {!! Form::model($category, ['route' => ['admin.categories.update', $category], 'method' => 'put']) !!}
+            <div class="form-group">
+                {!! Form::label('name', 'Nombre') !!}
+                {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre de la categoría']) !!}
+                @error('name')
+                    <span class="text-danger ">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('slug', 'Slug') !!}
+                {!! Form::text('slug', null, ['class' => 'form-control disabled', 'placeholder' => 'Ingrese el slug de la categoría', 'readonly']) !!}
+                @error('slug')
+                    <span class="text-danger ">{{ $message }}</span>
+                @enderror
+            </div>
+            {!! Form::submit('Actualizar categoría', ['class' => 'btn btn-primary']) !!}
+            {!! Form::close() !!}
         </div>
-        {!! Form::submit('Actualizar categoría', ['class' => 'btn btn-primary']) !!}
-        {!! Form::close() !!}
     </div>
-</div>
 @stop
 
 
