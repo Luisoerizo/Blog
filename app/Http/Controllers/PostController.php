@@ -24,7 +24,7 @@ class PostController extends Controller
                                 ->latest('id')
                                 ->take(4)
                                 ->get();
-        return view('posts/show',compact('post','similares'));
+        return view('posts.show',compact('post','similares'));
     }
 
     public function category(Category $category)
