@@ -34,11 +34,7 @@
                             <td width="10px"><a class="btn btn-primary btn-sm"
                                     href="{{ route('admin.categories.edit', $category) }}">Editar</a></td>
                             <td width="10px">
-                                <form action="{{ route('admin.categories.destroy', $category) }}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                                </form>
+
                             </td>
                         </tr>
                     @endforeach

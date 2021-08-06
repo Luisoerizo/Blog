@@ -13,6 +13,7 @@
                             <a href="{{ route('posts.show',$post)}}">
                                 {{$post->name}}
                             </a>
+                            <h2 class=" text-black">{{$post->image->url}}</h2>
                         </h1>
                     </div>
                 </article>
