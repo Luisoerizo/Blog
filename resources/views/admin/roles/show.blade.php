@@ -2,7 +2,7 @@
 @section('title', 'Administrador')
 
 @section('content_header')
-    <h1>Mostrar categorías</h1>
+    <h1>Detalles del rol</h1>
 @stop
 
 @section('content')

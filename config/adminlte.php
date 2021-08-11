@@ -250,36 +250,49 @@ return [
             'text'        => 'Dashboard',
             'route'         => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
+            'can'          =>'admin.home'
         ],
         [
             'text'        => 'Usuarios',
             'route'         => 'admin.users.index',
             'icon'        => 'fas fa-users fa-fw',
-            'active'       => ['admin/users*']
+            'active'       => ['admin/users*'],
+            'can'          =>'admin.users.index'
         ],
-        ['header' => 'ADMINISTRADOR'],
         [
             'text' => 'Categorías',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-buffer fa-fw',
-            'active' => ['admin/categories*']
+            'active' => ['admin/categories*'],
+            'can'          =>'admin.categories.index'
+
         ],
         [
             'text' => 'Etiquetas',
             'route'  => 'admin.tags.index',
             'icon' => 'fas fa-tags fa-fw',
-            'active' => ['admin/tags*']
+            'active' => ['admin/tags*'],
+            'can'          =>'admin.tags.index'
+        ],
+        [
+            'text' => 'Lista de roles',
+            'route'  => 'admin.roles.index',
+            'icon' => 'fas fa-users-cog fa-fw',
+            'active' => ['admin/roles*'],
+            'can'          =>'admin.roles'
         ],
         ['header' => 'OPCIONES DE BLOG'],
         [
             'text'       => 'Lista de Posts',
             'route' => 'admin.posts.index',
-            'icon' => 'fas fa-fw fa-clipboard-list'
+            'icon' => 'fas fa-fw fa-clipboard-list',
+            'can'          =>'admin.posts.index'
         ],
         [
             'text'       => 'Crer nuevo Post',
             'route' => 'admin.posts.create',
-            'icon' => 'fas fa-fw fa-file-alt'
+            'icon' => 'fas fa-fw fa-file-alt',
+            'can'          =>'admin.posts.create'
         ],
     ],
 
